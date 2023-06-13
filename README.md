@@ -47,20 +47,20 @@ Notes:
 
 ## Data Structures
 
-### Arrays
+- Arrays
 
 Arrays hold elements of the same data type in contiguous blocks of memory and indexed by contiguous integers. Different programming languages implement arrays differently under the hood. For instance, in languages like C, arrays have a fixed size that you need to define beforehand. Whereas in languages like Python, arrays (or list in Python) are dynamic. These differences can affect the time complexity of operations made to the array.
 
-#### Advantages
+### Advantages
 
 - Constant time access to read and write array elements
 - Store multiple elements
 
-#### Disadvantages
+### Disadvantages
 
 - Adding and removing elements from the start or middle is an O(n) operation (i.e. linear time operation). However, doing so from the end is an O(1) (i.e. constant operation) operation.
 
-#### Key Takeaways
+### Key Takeaways
 
 - The ith element of a one dimensional array is accessed using `arr[i]` and the index math is `(addr of arr) + ((size of an element in the arr) * (i - first_index of arr))`.
 - The (r, c) element of a two dimensional array (referred to as matrix) is accessed using `arr[i][j]` and the index math is `(r - first_row_index) * (size of row) + (c - first_column_index)`.
