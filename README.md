@@ -47,7 +47,7 @@ Notes:
 
 ## Data Structures
 
-- Arrays
+### - Arrays
 
 Arrays hold elements of the same data type in contiguous blocks of memory and indexed by contiguous integers. Different programming languages implement arrays differently under the hood. For instance, in languages like C, arrays have a fixed size that you need to define beforehand. Whereas in languages like Python, arrays (or list in Python) are dynamic. These differences can affect the time complexity of operations made to the array.
 
