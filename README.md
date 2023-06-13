@@ -35,7 +35,7 @@ In this section, discuss the prerequisites for the repository (if any), how to n
 
 Here you can list down the topics covered in your study guides. The list might include Data Structures, Algorithms, Databases, System Design, Networking, etc.
 
-### Big-O Notation
+## Big-O Notation
 
 Big-O is the language used by programmers for measuring the efficiency of an algorithm. It helps answer if the optimizations made to an algorithm is helping or hurting.
 
@@ -45,13 +45,13 @@ Notes:
 - Constants are dropped: `O(2n) => O(n)`.
 - Drop non-dominant terms: `O(n^2  + 3n + 2) => O(n^2)`.
 
-### Data Structures
+## Data Structures
 
-#### Arrays
+### Arrays
 
 Arrays hold elements of the same data type in contiguous blocks of memory and indexed by contiguous integers. Different programming languages implement arrays differently under the hood. For instance, in languages like C, arrays have a fixed size that you need to define beforehand. Whereas in languages like Python, arrays (or list in Python) are dynamic. These differences can affect the time complexity of operations made to the array.
 
-##### Advantages
+#### Advantages
 
 - Constant time access to read and write array elements
 - Store multiple elements
