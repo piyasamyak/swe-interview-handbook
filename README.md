@@ -8,6 +8,7 @@ Welcome to the Software Engineering Interview Handbook! This repository is a col
 2. [Getting Started](#getting-started)
 3. [Topics Covered](#topics-covered)
    - [Big-O Notation](#big-o)
+   - [Problem-Solving](#problem-solving)
    - [Data Structures](#data-structures)
      - [Arrays](#arrays)
 4. [Study Guides](#study-guides)
@@ -37,7 +38,7 @@ Here you can list down the topics covered in your study guides. The list might i
 
 ## Big-O Notation
 
-Big-O is the language used by programmers for measuring the efficiency of an algorithm. It helps answer if the optimizations made to an algorithm is helping or hurting.
+Big-O is the language used by programmers for measuring the efficiency of an algorithm. It helps answer if the optimizations made to an algorithm are helping or hurting.
 
 Notes:
 
@@ -45,11 +46,52 @@ Notes:
 - Constants are dropped: `O(2n) => O(n)`.
 - Drop non-dominant terms: `O(n^2  + 3n + 2) => O(n^2)`.
 
+## Problem-Solving
+
+When given a question to solve, there are proven steps that I encourage you to follow before diving into coding:
+
+1. **Verify the constraints**: Constraints are ways we can understand the question better so we know what kind of edge cases to consider as well as the different variables that might impact how you solve the question. This usually comes in the form of a dialog i.e. you want to ask your interviewer certain questions to answer and figure out what these constraints are.
+   For example, for the famous `Two Sum` problem, you could ask:
+
+   - Are all the numbers positive or can there be negatives? **Only positive.**
+   - Are there duplicate numbers in the array? **No.**
+   - Will there always be a solution available (i.e. given the array and the target, will we always be able to find two numbers that will add up to the target?) **No.**
+   - What do we return if there's no solution? **Return null.**
+   - Can multiple pairs add up to the target? **No.**
+     Asking these questions demonstrates that you are thinking about all these edge cases and you're giving that onus on the actual person that gave you the task to figure out what the constraints are for the particular problem.
+
+2. **Write out some test cases**: Test cases are just different combinations of the input we can receive. In the example of `Two Sum`, it would be different combinations of the array and the target we could get that would best capture all of these different edge cases that our solution wants to account for. This is a process you can work with your interviewer on where you ask them, "Is it okay if we come up with some test cases together that best capture these different questions that you've helped me answer for our constraints?".
+
+```javascript
+// The first test case we want to begin with is the Best Case Test Case. This is the text case that we know for sure what the answer will be for the given inputs we receive.
+// arr = [1, 3, 7, 9, 2], t = 11, res = [3, 4]
+// arr = [1, 3, 7, 9, 2], t = 25, res = null
+// arr = [], t = 1, res = null
+// arr = [5], t = 5, res = null
+// arr = [1, 6], t = 7, res = [0, 1]
+```
+
+3. **Figure out a solution without code**: This is a very crucial step because what we're doing here is coming up with a working solution before we get bogged down by any technical details. Don't think about the code implementation. Just think of a working logical solution for how you might solve this problem if you were just asked the question out of the blue. So, if there's no code involved, you don't want to think about for loop, while loop, variables, etc. All you want to think about is if I were to approach this problem critically and logically, how would I ensure that I have a working solution for all the test cases that I came up with?
+
+Start with the best-case test case that you came up with. In this step, don't think about optimal solutions, we just want to make sure that we have a working solution because a working solution is way better than a non-working optimal solution.
+
+4. **Write out your solution in code**: Convert your algorithm to code.
+
+5. **Double-check for errors**: Make sure that you did not make any spelling mistakes or typos. Variable names should be consistent wherever they are used. All of your cases should be correct. All your loops and functions should be properly closed. The main key here is that you want to do the due diligence check to make sure that your code is exactly how it should be for it to work properly. Essentially, you should be able to copy this into an IDE and the code should work perfectly. Your interviewer is looking for these mistakes and trying to see if you're a careful coder.
+
+6. **Test your code with your test cases**: At this step, what we're doing is testing the solution we wrote against our test case. This is a crucial step because the interviewer is going to make you do exactly this. They want to make sure that you understand what every step of the code you wrote is doing. The only way for them to verify that is by asking you to walk through the solution using one of your test cases. So they want you to keep track of all the variables you're setting and how the code is going to flow and your logic. So, this is important to practice because without practice you might stumble upon having to walk through your code rigorously.
+
+7. **Analyze space and time complexity**: When you're analyzing space and time complexity, you're trying to identify the relative relationship of how much of the time and space resources your code will consume based on the size of your inputs. Meaning that if you have inputs that scale, which they generally always will, in our particular case, how much more time and space resources is your code going to take?
+
+With time complexity, you're thinking about how many more iterations your code has to run if the array gets bigger.
+
+8. **Can you optimize your solution?**: When you compare space and time complexities, if one of them is drastically better than the other, that is a good hint that maybe you can consume more resources in the complexity that is much better to bring down the other complexity.
+
 ## Data Structures
 
 ### - Arrays
 
-Arrays hold elements of the same data type in contiguous blocks of memory and indexed by contiguous integers. Different programming languages implement arrays differently under the hood. For instance, in languages like C, arrays have a fixed size that you need to define beforehand. Whereas in languages like Python, arrays (or list in Python) are dynamic. These differences can affect the time complexity of operations made to the array.
+Arrays hold elements of the same data type in contiguous blocks of memory and are indexed by contiguous integers. Different programming languages implement arrays differently under the hood. For instance, in languages like C, arrays have a fixed size that you need to define beforehand. Whereas in languages like Python, arrays (or lists in Python) are dynamic. These differences can affect the time complexity of operations made to the array.
 
 ### Advantages
 
@@ -62,9 +104,9 @@ Arrays hold elements of the same data type in contiguous blocks of memory and in
 
 ### Key Takeaways
 
-- The ith element of a one dimensional array is accessed using `arr[i]` and the index math is `(addr of arr) + ((size of an element in the arr) * (i - first_index of arr))`.
-- The (r, c) element of a two dimensional array (referred to as matrix) is accessed using `arr[i][j]` and the index math is `(r - first_row_index) * (size of row) + (c - first_column_index)`.
-- If rows are sequentially completed first during accessing elements in a two dimensional array, it is called row-major access. It is called column-major access for columns.
+- The ith element of a one-dimensional array is accessed using `arr[i]` and the index math is `(addr of arr) + ((size of an element in the arr) * (i - first_index of arr))`.
+- The (r, c) element of a two-dimensional array (referred to as matrix) is accessed using `arr[i][j]` and the index math is `(r - first_row_index) * (size of row) + (c - first_column_index)`.
+- If rows are sequentially completed first during accessing elements in a two-dimensional array, it is called row-major access. It is called column-major access for columns.
 
 ## Study Guides
 
