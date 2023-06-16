@@ -11,6 +11,7 @@ Welcome to the Software Engineering Interview Handbook! This repository is a col
    - [Problem-Solving](#problem-solving)
    - [Data Structures](#data-structures)
      - [Arrays](#arrays)
+     - [Hash Tables](#hash-tables)
 4. [Study Guides](#study-guides)
 5. [Interview Tips](#interview-tips)
 6. [Practice Problems](#practice-problems)
@@ -107,6 +108,24 @@ Arrays hold elements of the same data type in contiguous blocks of memory and ar
 - The ith element of a one-dimensional array is accessed using `arr[i]` and the index math is `(addr of arr) + ((size of an element in the arr) * (i - first_index of arr))`.
 - The (r, c) element of a two-dimensional array (referred to as matrix) is accessed using `arr[i][j]` and the index math is `(r - first_row_index) * (size of row) + (c - first_column_index)`.
 - If rows are sequentially completed first during accessing elements in a two-dimensional array, it is called row-major access. It is called column-major access for columns.
+
+### Hash Tables
+
+Also known as hash maps (Ruby), maps (Java), unordered maps, dictionaries (Python), or objects (JavaScript). There are many ways to call this data structure and different languages have different names for it and slight variations. This is one of the most important data structures you need to grasp.
+
+Hash Tables are very important all across Computer Science. These are seen a lot in databases and caches and are extremely useful. This is used in data structure because we get really fast data access. All we have to do to find a value is to pass the key which then generates a unique address.
+
+**How do hash tables work?**
+Hash tables store data in key-value pairs. The key is hashed using a special hash function that generates a value of fixed length for each input it gets. Hash functions are one-way, i.e., there is no way of determining what the input was from the output that a hash function generates.
+
+| Function | Time Complexity |
+| -------- | --------------- |
+| Insert   | O(1)            |
+| Lookup   | O(1)            |
+| Delete   | O(1)            |
+| Search   | O(1)            |
+
+Looking at the above table, one might wonder why not always use Hash Tables. The answer is Hash Collision. We have limited space in memory. Hash Collision occurs when two keys when hashed return the same address in the memory space, resulting in a collision. There are different ways to resolve these collisions (Separate Chaining, Open Addressing, Robin Hood Hashing, etc.). This could be done using Linked Lists. Theoretically, when you have a collision, it slows down reading and writing by O(n / k) where 'k' is the size of the hash table. After simplification, this becomes an O(n) operation.
 
 ## Study Guides
 
